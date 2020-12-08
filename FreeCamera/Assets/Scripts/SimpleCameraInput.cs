@@ -2,10 +2,11 @@
 
 public class SimpleCameraInput : MonoBehaviour
 {
-    public Axis xAxis;
-    public Axis yAxis;
-    public Axis zAxis;
-    public KeyCode SpeedKey = KeyCode.LeftShift;
+    public Axis xAxis = new Axis(KeyCode.D, KeyCode.A);
+    public Axis yAxis = new Axis(KeyCode.W, KeyCode.S);
+    public Axis zAxis = new Axis(KeyCode.E, KeyCode.Q);
+    public KeyCode BoostSpeedKey = KeyCode.LeftShift;
+    public KeyCode SwitchOnKey = KeyCode.F;
 
     public int GetAxis(Axis axisType)
     {
@@ -20,4 +21,9 @@ public class Axis
 {
    public KeyCode Positive;
    public KeyCode Negative;
+    public Axis(KeyCode positive, KeyCode negative)
+    {
+        Positive = positive;
+        Negative = negative;
+    }
 }
